@@ -84,4 +84,5 @@ function volverInicio(){
     //ocultamos las pantallas y activamos la inicial 
     document.getElementById("pantallaEnd").style.display = "none";
     document.getElementById("pantallaInitial").style.display = "block";
+    document.getElementById("pantallaGame").style.display = "none";
 }
