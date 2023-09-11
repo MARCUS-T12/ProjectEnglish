@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Mochiy+Pop+One&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     font-family: 'Mochiy Pop One', sans-serif;
 }
 
-body{
+body {
     background: linear-gradient(#0000ff, #010133);
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
 }
 
-h1{
+h1 {
     width: fit-content;
     background-color: #FFFF;
     margin: 40px auto;
@@ -21,7 +21,7 @@ h1{
     padding: 20px 30px;
 }
 
-footer{
+footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -34,21 +34,15 @@ footer{
     text-align: center;
 }
 
-
-
-
-/*Pantallla Intitial*/
-#pantallaInitial{
+/* Pantalla Initial */
+#pantallaInitial {
     display: block;
     text-align: center;
     font-size: 30px;
-}
-
-#pantallaInitial{
     margin: 60px 0;
 }
 
-.btn{
+.btn {
     border: none;
     background: #580078;
     color: #FFF;
@@ -57,39 +51,73 @@ footer{
     cursor: pointer;
     transition: .5s;
 }
-.btn:hover{
+
+.btn:hover {
     transform: scale(1.1);
 }
 
-/*Pantallla Game*/
-#pantallaGame{
+#subcompetencias {
+    display: none;
+    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 800px;
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado horizontalmente */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 #000;
+}
+
+#subcompetencias h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Agrega espacio entre el título y la lista */
+}
+
+#subcompetencias ul {
+    list-style-type: disc; /* Usa viñetas para la lista */
+    margin-left: 20px; /* Añade un margen a la izquierda para la lista */
+}
+
+#subcompetencias li {
+    font-size: 18px;
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+}
+
+/* Puedes agregar más estilos según tus preferencias */
+
+
+/* Pantalla Game */
+#pantallaGame {
     display: none;
 }
 
-.pantallaGame{
+.pantallaGame {
     max-width: 800px;
     margin: 50px auto;
     text-align: center;
 }
 
-.pantallaGame{
-    max-width: 400px;
-    width: 100%;
+@media (max-width: 600px) {
+    .pantallaGame {
+        max-width: 400px;
+        width: 100%;
+    }
 }
 
-.opcions{
+.opcions {
     max-width: 400px;
     margin: auto;
 }
-.opcion{
+
+.opcion {
     display: flex;
     position: relative;
     align-items: center;
     max-width: 400px;
     cursor: pointer;
+    margin: 10px;
 }
 
-.opcion .letra{
+.opcion .letra {
     background-color: #580078;
     width: 50px;
     height: 50px;
@@ -99,10 +127,10 @@ footer{
     text-align: center;
     border-radius: 50%;
     line-height: 35px;
-    border: 5px  solid #FFF;
+    border: 5px solid #FFF;
 }
 
-.opcion .nombre{
+.opcion .nombre {
     background: #FFF;
     width: 100%;
     font-size: 25px;
@@ -113,36 +141,35 @@ footer{
     padding: 7px 0 7px 30px;
 }
 
-/*clase que se aplicara cuando haya acertado la opcion*/
-.opcion .nombreAcertada{
+/* Clase que se aplicará cuando haya acertado la opción */
+.opcion .nombreAcertada {
     background-color: yellowgreen;
     color: #FFF;
 }
 
-.opcion .letraAcertada{
+.opcion .letraAcertada {
     background-color: yellowgreen;
     color: #FFF;
 }
 
-/*clase que se aplicara cuando haya se equivoque de opcion*/
-.opcion .nombreNoAcertada{
+/* Clase que se aplicará cuando haya se equivoque de opción */
+.opcion .nombreNoAcertada {
     background-color: darkred;
     color: #FFF;
 }
 
-.opcion .letraNoAcertada{
+.opcion .letraNoAcertada {
     background-color: darkred;
     color: #FFF;
 }
 
-
-
-/*Pantallla End*/
-#pantallaEnd{
+/* Pantalla End */
+#pantallaEnd {
     display: none;
     text-align: center;
 }
-#pantallaEnd #numCorrectas{
+
+#pantallaEnd #numCorrectas {
     background-color: chartreuse;
     display: inline-block;
     width: 50px;
@@ -151,7 +178,7 @@ footer{
     border: 5px solid #FFF;
 }
 
-#pantallaEnd #numIncorrectas{
+#pantallaEnd #numIncorrectas {
     background-color: darkred;
     display: inline-block;
     width: 50px;

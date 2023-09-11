@@ -16,13 +16,22 @@ let posActual = 0;
 //variable que guarda cantidad acertadas hasta el momento
 let cantidadAcertadas = 0;
 
+
+function mostrarSubcompetencias() {
+
+    document.getElementById("pantallaInitial").style.display = 'none';
+    document.getElementById("subcompetencias").style.display = 'block';
+
+}
+
 function comenzarGame(){
     //reseteamos las variables
     posActual = 0;
     cantidadAcertadas = 0;
     //activamos pantallas necesarias
-    document.getElementById("pantallaInitial").style.display = 'none';
+    document.getElementById("subcompetencias").style.display = 'none';
     document.getElementById("pantallaGame").style.display = 'block';
+
     cargarCuestion();
 }
 

@@ -7,14 +7,25 @@
     <title>QUIZ</title>
 </head>
 <body>
-    <h1>QUIZ</h1>
+    <h1>Welcome to Quiz</h1>
 
     <div id="pantallaInitial">
-        <p>QUIZ</p>
-        <button class="btn" onclick="comenzarGame()">Play</button>
+        <p>You will learn how to play this game in relation to the topics you have seen</p>
+        <button class="btn" onclick="mostrarSubcompetencias()">Play</button>
     </div>
 
-    <div class="pantallaGame" id="pantallaGame">
+    <div id="subcompetencias" >
+        <h2>Subcompetencias:</h2>
+        <ul>
+            <li><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</li>
+            <li><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</li>
+            <li><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</li>
+            <!-- Agrega más temas y subcompetencias según sea necesario -->
+            <button class="btn" onclick="comenzarGame()">Comenzar</button>
+        </ul>
+    </div>
+
+    <div class="pantallaGame"  id="pantallaGame">
         <img src="" alt="img">
         <div class="opcions">
             <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
