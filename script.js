@@ -1,12 +1,13 @@
 //orden del arreglo por cada cuestionario
-let cuestion = ['How do you say? Banana'];
+let cuestion = ['How do you say? Banana','How do you say? Uva'];
 
 //arreglo que guardara la opcion correcta
-let correcta = [1];
+let correcta = [1,2];
 
 //arreglo que guardara las respuestas de cada jugada
 let opcions = [];
 
+opcions.push (['Naranja','Banana','Uva']);
 opcions.push (['Naranja','Banana','Uva']);
 
 //variable que guarda la position actual
