@@ -139,7 +139,7 @@ footer{
 
 /*Pantallla End*/
 #pantallaEnd{
-    display: block;
+    display: none;
     text-align: center;
 }
 #pantallaEnd #numCorrectas{

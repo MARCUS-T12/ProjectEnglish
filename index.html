@@ -11,21 +11,21 @@
 
     <div id="pantallaInitial">
         <p>QUIZ</p>
-        <button class="btn">Play</button>
+        <button class="btn" onclick="comenzarGame()">Play</button>
     </div>
 
     <div class="pantallaGame" id="pantallaGame">
         <img src="" alt="img">
         <div class="opcions">
-            <div class="opcion" id="op0">
+            <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
                 <div class="letra" id="l0">A</div>
                 <div class="nombre" id="n0">OPTION A</div>
             </div>
-            <div class="opcion" id="op1">
+            <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
                 <div class="letra" id="l1">B</div>
                 <div class="nombre" id="n1">OPTION B</div>
             </div>
-            <div class="opcion" id="op2">
+            <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
                 <div class="letra" id="l2">C</div>
                 <div class="nombre" id="n2">OPTION C</div>
             </div>
@@ -35,8 +35,11 @@
     <div id="pantallaEnd">
         <h2>CORRECTAS:<span id="numCorrectas">3</span></h2>
         <h2>INCORRECTAS:<span id="numIncorrectas">2</span></h2>
-        <button class="btn"> volver</button>
+        <button class="btn" onclick="volverInicio()"> volver</button>
     </div>
     
+    <footer>Desarrollado For ...</footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
