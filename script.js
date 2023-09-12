@@ -111,7 +111,7 @@ function terminarGame() {
 
 function volverInicio() {
     document.getElementById("pantallaEnd").style.display = "none";
-    document.getElementById("pantallaInitial").style.display = "block";
+    document.getElementById("subcompetencias").style.display = "block";
     document.getElementById("pantallaGame").style.display = "none";
 }
 
