@@ -11,10 +11,14 @@
 
     <div id="pantallaInitial">
         <p>You will learn how to play this game in relation to the topics you have seen</p>
-        <button class="btn" onclick="mostrarSubcompetencias()">Comenzar</button>
+        <button class="btn" onclick="mostrarSubcompetencias()">Start</button>
     </div>
     
     <div id="subcompetencias">
+        <div  id="iconSet" onclick="mostrarDashboard()">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXxJREFUSEu1letRAzEMhDedkEqASgiVAJVAJ4FKgEpgPsab2bM1jhmI/tzcxdI+JCs7XTh2F66vVYAbSQ+SeBKvkp7ac8pxFeBd0lVXCZDbcw6sAFAYAMLnv9r7XtLHDKQCsB1vLRFrCApRkEhFLwFATr4PPThIei4Y9Z73PcmU+wTpFVg6LOz5rJkAQQgCn20QUEpvfqxLALNPK8wMMKziDL9bUe+/rTupqAAoCmtUUCCbnFZsmDYlECBQAImhB4+S7lpRTwgWkEgCzAi+YY9HNUlAjjqbsUtmlml1fj+xClVpJ/0b7K3G1AWtoAKA/TFIWsFZAKR57g1AIduBfIrYIvqEbUsW5SEnQvI3TYYI56dTVO0Ykmg0A0Bkw6v+lQC5ArDiumWuXDRsY01g76YPfZOzB8nMjH2xUOQ+9Jtluio4jBVmz7t9zXvjleJLyZOcQe3Kuu5HkmJ/Wte95OxN/lbtrCF3RYFtwnNv2H//y6xULX1bVbBUrDr0DeG4bxlWQEqyAAAAAElFTkSuQmCC" 
+            id="dashboardIcon" alt="Dashboard Icon">
+        </div>
         <h2>Subcompetencias:</h2>
         <ul>
             <li><button class="btn" id="btnSubcompetencia1" data-subcompetencia="Subcompetencia 1" onclick="mostrarDescripcion('Subcompetencia 1')"><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</button></li>
@@ -24,11 +28,14 @@
         </ul>
     </div>
     
+    
     <div id="descripcion">
         <h2>Descripción de la Subcompetencia</h2>
         <p id="descripcionTexto"></p>
-        <button class="btn" onclick="regresarASubcompetencias()">Back</button>
-        <button class="btn" onclick="comenzarGame(subcompetenciaSeleccionada)">Jugar</button>
+        <div id="contenedorBtn">
+            <button class="btn" onclick="regresarASubcompetencias()">Back</button>
+            <button class="btn" onclick="comenzarGame(subcompetenciaSeleccionada)">Play</button>
+        </div>
     </div>
     
 
@@ -54,7 +61,8 @@
         <h2>CORRECTAS:<span id="numCorrectas">3</span></h2>
         <h2>INCORRECTAS:<span id="numIncorrectas">2</span></h2>
         <button class="btn" onclick="volverInicio()"> volver</button>
-    </div>
+    </div>  
+    
     
     <footer>Developed For OurClub</footer>
 

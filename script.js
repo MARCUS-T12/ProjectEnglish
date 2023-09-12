@@ -8,6 +8,7 @@ let subcompetenciaSeleccionada = '';
 let posActual = 0;
 let cantidadAcertadas = 0;
 
+
 function regresarASubcompetencias() {
     document.getElementById("descripcion").style.display = 'none';
     document.getElementById("subcompetencias").style.display = 'block';

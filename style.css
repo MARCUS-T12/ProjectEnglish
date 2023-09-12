@@ -61,6 +61,14 @@ footer {
     transform: scale(1.1);
 }
 
+#iconSet img{
+    float:right;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+
 #subcompetencias {
     display: none;
     text-align: left; /* Alinea el texto a la izquierda */
@@ -102,6 +110,14 @@ footer {
 #descripcion h2 {
     font-size: 24px;
     margin-bottom: 10px; /* Agrega espacio entre el título y la lista */
+}
+
+#contenedorBtn{
+    text-align: center; 
+}
+
+#contenedorBtn button{
+    margin: 0 10%;
 }
 
 /* Pantalla Game */
