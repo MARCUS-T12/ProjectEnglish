@@ -52,7 +52,6 @@ function cargarPreguntasYOpciones() {
     }
 }
 
-
 function cargarCuestion() {
     if (cuestion.length <= posActual) {
         terminarGame();
