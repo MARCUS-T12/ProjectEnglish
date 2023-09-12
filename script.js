@@ -114,4 +114,3 @@ function volverInicio() {
     document.getElementById("subcompetencias").style.display = "block";
     document.getElementById("pantallaGame").style.display = "none";
 }
-
