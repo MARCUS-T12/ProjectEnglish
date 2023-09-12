@@ -14,18 +14,17 @@
         <button class="btn" onclick="mostrarSubcompetencias()">Comenzar</button>
     </div>
 
-    <div id="subcompetencias" >
+    <div id="subcompetencias">
         <h2>Subcompetencias:</h2>
         <ul>
-            <li><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</li>
-            <li><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</li>
-            <li><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</li>
+            <li><button class="btn" id="btnSubcompetencia1" data-subcompetencia="Subcompetencia 1" onclick="comenzarGame('Subcompetencia 1')"><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</button></li>
+            <li><button class="btn" id="btnSubcompetencia2" data-subcompetencia="Subcompetencia 2" onclick="comenzarGame('Subcompetencia 2')"><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</button></li>
+            <li><button class="btn" id="btnSubcompetencia3" data-subcompetencia="Subcompetencia 3" onclick="comenzarGame('Subcompetencia 3')"><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</button></li>
             <!-- Agrega más temas y subcompetencias según sea necesario -->
-            <button class="btn" onclick="comenzarGame()">play</button>
         </ul>
     </div>
 
-    <div class="pantallaGame"  id="pantallaGame">
+    <div class="pantallaGame" id="pantallaGame">
         <div id="textoPantallaGame"></div>
         <div class="opcions">
             <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
