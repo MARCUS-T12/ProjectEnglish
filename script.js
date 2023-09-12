@@ -13,11 +13,25 @@ function mostrarSubcompetencias() {
     document.getElementById("subcompetencias").style.display = 'block';
 }
 
+function mostrarDescripcion(subcompetencia) {
+    subcompetenciaSeleccionada = subcompetencia;
+    document.getElementById("subcompetencias").style.display = 'none';
+    document.getElementById("descripcion").style.display = 'block';
+    // Define aquí las descripciones para cada subcompetencia
+    const descripciones = {
+        'Subcompetencia 1': 'Esta es la descripción de la Subcompetencia 1. Aquí puedes agregar información sobre lo que los jugadores aprenderán en esta subcompetencia.',
+        'Subcompetencia 2': 'Esta es la descripción de la Subcompetencia 2. Agrega detalles sobre el contenido relacionado con esta subcompetencia.',
+        'Subcompetencia 3': 'Descripción de la Subcompetencia 3. Puedes proporcionar información relevante sobre esta subcompetencia.',
+        // Agrega descripciones para otras subcompetencias
+    };
+    document.getElementById("descripcionTexto").textContent = descripciones[subcompetencia];
+}
+
 function comenzarGame(subcompetencia) {
     subcompetenciaSeleccionada = subcompetencia;
     posActual = 0;
     cantidadAcertadas = 0;
-    document.getElementById("subcompetencias").style.display = 'none';
+    document.getElementById("descripcion").style.display = 'none';
     document.getElementById("pantallaGame").style.display = 'block';
     cargarPreguntasYOpciones();
 }

@@ -11,18 +11,25 @@
 
     <div id="pantallaInitial">
         <p>You will learn how to play this game in relation to the topics you have seen</p>
-        <button class="btn" onclick="mostrarSubcompetencias()">Start</button>
+        <button class="btn" onclick="mostrarSubcompetencias()">Comenzar</button>
     </div>
-
+    
     <div id="subcompetencias">
         <h2>Subcompetencias:</h2>
         <ul>
-            <li><button class="btn" id="btnSubcompetencia1" data-subcompetencia="Subcompetencia 1" onclick="comenzarGame('Subcompetencia 1')"><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</button></li>
-            <li><button class="btn" id="btnSubcompetencia2" data-subcompetencia="Subcompetencia 2" onclick="comenzarGame('Subcompetencia 2')"><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</button></li>
-            <li><button class="btn" id="btnSubcompetencia3" data-subcompetencia="Subcompetencia 3" onclick="comenzarGame('Subcompetencia 3')"><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</button></li>
+            <li><button class="btn" id="btnSubcompetencia1" data-subcompetencia="Subcompetencia 1" onclick="mostrarDescripcion('Subcompetencia 1')"><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</button></li>
+            <li><button class="btn" id="btnSubcompetencia2" data-subcompetencia="Subcompetencia 2" onclick="mostrarDescripcion('Subcompetencia 2')"><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</button></li>
+            <li><button class="btn" id="btnSubcompetencia3" data-subcompetencia="Subcompetencia 3" onclick="mostrarDescripcion('Subcompetencia 3')"><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</button></li>
             <!-- Agrega más temas y subcompetencias según sea necesario -->
         </ul>
     </div>
+    
+    <div id="descripcion" style="display: none;">
+        <h2>Descripción de la Subcompetencia</h2>
+        <p id="descripcionTexto"></p>
+        <button class="btn" onclick="comenzarGame(subcompetenciaSeleccionada)">Jugar</button>
+    </div>
+    
 
     <div class="pantallaGame" id="pantallaGame">
         <div id="textoPantallaGame"></div>
