@@ -1,8 +1,8 @@
 
 // Datos del juego
-let cuestion = ['How do you say? Banana', 'How do you say? Uva'];
-let correcta = [1, 2];
-let opcions = [['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva']];
+let cuestion = ['How do you say? Banana', 'How do you say? Uva', 'How do you say? Naranja'];
+let correcta = [1, 2, 0];
+let opcions = [['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva']];
 
 
 // Variables de juego
