@@ -19,6 +19,11 @@ function mostrarSubcompetencias() {
     document.getElementById("subcompetencias").style.display = 'block';
 }
 
+function pantallaInitial() {
+    document.getElementById("pantallaInitial").style.display = 'block';
+    document.getElementById("subcompetencias").style.display = 'none';
+}
+
 function mostrarDescripcion(subcompetencia) {
     subcompetenciaSeleccionada = subcompetencia;
     document.getElementById("subcompetencias").style.display = 'none';
