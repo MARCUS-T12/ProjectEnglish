@@ -120,6 +120,18 @@ footer {
     margin: 0 10%;
 }
 
+#countdown{
+    display: none;
+    max-width: 800px;
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado horizontalmente */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 #000;
+    text-align: center;
+    font-size: 30px;
+}
+
 /* Pantalla Game */
 #pantallaGame {
     display: none;

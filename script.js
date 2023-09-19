@@ -33,6 +33,42 @@ function mostrarDescripcion(subcompetencia) {
     document.getElementById("descripcionTexto").textContent = descripciones[subcompetencia];
 }
 
+// Variables para la cuenta regresiva
+function iniciarCuentaRegresiva() {
+    // Ocultar la pantalla de Descripción
+    document.getElementById("descripcion").style.display = 'none';
+
+    // Mostrar la pantalla de Countdown
+    const countdownElement = document.getElementById("countdown");
+    countdownElement.style.display = 'block';
+
+    // Iniciar la cuenta regresiva
+    let countdownValue = 3; // Valor inicial de la cuenta regresiva
+    countdownElement.textContent = countdownValue;
+
+    const countdownInterval = setInterval(function() {
+        countdownValue--;
+
+        if (countdownValue === 0) {
+            // Cuando la cuenta regresiva llega a cero, detenemos el intervalo
+            clearInterval(countdownInterval);
+
+            // Ocultar la pantalla de Countdown
+            countdownElement.style.display = 'none';
+
+            // Comenzar el juego
+            comenzarGame(subcompetenciaSeleccionada);
+        } else {
+            // Actualizar el texto del contador
+            countdownElement.textContent = countdownValue;
+        }
+    }, 1000); // Actualizar cada 1 segundo (1000 milisegundos)
+}
+
+
+
+
+
 function comenzarGame(subcompetencia) {
     subcompetenciaSeleccionada = subcompetencia;
     posActual = 0;
