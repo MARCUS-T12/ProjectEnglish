@@ -3,9 +3,13 @@ const start_btn=document.querySelector(".start_btn")
 const info_box=document.querySelector(".info_box")
 const exit_btn=info_box.querySelector(".buttons .quit")
 const continue_btn=info_box.querySelector(".buttons .restart")
+const topics_box=document.querySelector(".topics_box")
+const back_btn=topics_box.querySelector(".buttons .back")
+const next_btn_topics=topics_box.querySelector(".buttons .next")
 const quiz_box=document.querySelector(".quiz_box")
 const option_list=document.querySelector(".option_list")
 const timeCount=quiz_box.querySelector('.timer .timer_sec')
+
 
 //Start quiz button clicled
 start_btn.onclick=()=>{
@@ -16,10 +20,19 @@ start_btn.onclick=()=>{
 exit_btn.onclick=()=>{
     info_box.classList.remove("activeInfo") //hide info box
 }
-
-//continue button clicked
 continue_btn.onclick=()=>{
     info_box.classList.remove("activeInfo") //hide info box
+    topics_box.classList.add("activesub") //hide info box
+}
+
+back_btn.onclick=()=>{
+    topics_box.classList.remove("activesub")
+    info_box.classList.add("activeInfo") //hide info box
+}
+
+//continue button clicked
+next_btn_topics.onclick=()=>{
+    topics_box.classList.remove("activesub") //hide info box
     quiz_box.classList.add("activeQuiz") //Show the quiz box
 showQuestions(0)
 queCounter(1)
@@ -37,6 +50,39 @@ const next_btn=quiz_box.querySelector(".next_btn")
 const result_box=document.querySelector('.result_box')
 const result_quiz=result_box.querySelector('.buttons .restart')
 const quit_quiz=result_box.querySelector('.buttons .quit')
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const quizBox = document.querySelector(".quiz_box");
+    const loadingScreen = document.querySelector(".loading-screen");
+    const countdownElement = document.getElementById("countdown");
+    let count = 3;
+  
+    function startCountdown() {
+      if (count > 0) {
+        countdownElement.textContent = count;
+        count--;
+        setTimeout(startCountdown, 1000);
+      } else {
+        // Oculta la pantalla de carga y muestra el quiz
+        loadingScreen.style.opacity = 0;
+        loadingScreen.style.pointerEvents = "none";
+        quizBox.style.opacity = 1;
+        quizBox.style.pointerEvents = "auto";
+      }
+    }
+  
+    next_btn_topics.addEventListener("click", function () {
+      // Muestra la pantalla de carga y comienza el contador al hacer clic en "Next"
+      loadingScreen.style.opacity = 1;
+      loadingScreen.style.pointerEvents = "auto";
+      startCountdown();
+    });
+  });
+  
+  
+  
+
 
 result_quiz.onclick=()=>
 {
