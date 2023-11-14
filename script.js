@@ -1,163 +1,201 @@
-// Datos del juego
-let cuestion = [];
-let correcta = [];
-let opcions = [];
-let subcompetenciaSeleccionada = '';
+//All required elements
+const start_btn=document.querySelector(".start_btn")
+const info_box=document.querySelector(".info_box")
+const exit_btn=info_box.querySelector(".buttons .quit")
+const continue_btn=info_box.querySelector(".buttons .restart")
+const quiz_box=document.querySelector(".quiz_box")
+const option_list=document.querySelector(".option_list")
+const timeCount=quiz_box.querySelector('.timer .timer_sec')
 
-// Variables de juego
-let posActual = 0;
-let cantidadAcertadas = 0;
-
-
-function regresarASubcompetencias() {
-    document.getElementById("descripcion").style.display = 'none';
-    document.getElementById("subcompetencias").style.display = 'block';
+//Start quiz button clicled
+start_btn.onclick=()=>{
+    info_box.classList.add("activeInfo") //show info box
 }
 
-function mostrarSubcompetencias() {
-    document.getElementById("pantallaInitial").style.display = 'none';
-    document.getElementById("subcompetencias").style.display = 'block';
+//exit button clicked
+exit_btn.onclick=()=>{
+    info_box.classList.remove("activeInfo") //hide info box
 }
 
-function pantallaInitial() {
-    document.getElementById("pantallaInitial").style.display = 'block';
-    document.getElementById("subcompetencias").style.display = 'none';
+//continue button clicked
+continue_btn.onclick=()=>{
+    info_box.classList.remove("activeInfo") //hide info box
+    quiz_box.classList.add("activeQuiz") //Show the quiz box
+showQuestions(0)
+queCounter(1)
+startTimer(15)
+
 }
 
-function mostrarDescripcion(subcompetencia) {
-    subcompetenciaSeleccionada = subcompetencia;
-    document.getElementById("subcompetencias").style.display = 'none';
-    document.getElementById("descripcion").style.display = 'block';
-    // Define aquí las descripciones para cada subcompetencia
-    const descripciones = {
-        'Subcompetencia 1': 'Esta es la descripción de la Subcompetencia 1. Aquí puedes agregar información sobre lo que los jugadores aprenderán en esta subcompetencia.',
-        'Subcompetencia 2': 'Esta es la descripción de la Subcompetencia 2. Agrega detalles sobre el contenido relacionado con esta subcompetencia.',
-        'Subcompetencia 3': 'Descripción de la Subcompetencia 3. Puedes proporcionar información relevante sobre esta subcompetencia.',
-        // Agrega descripciones para otras subcompetencias
-    };
-    document.getElementById("descripcionTexto").textContent = descripciones[subcompetencia];
+let que_count=0;
+let que_numb=1;
+let counter
+let timeValue=15
+let userScore=0
+
+const next_btn=quiz_box.querySelector(".next_btn")
+const result_box=document.querySelector('.result_box')
+const result_quiz=result_box.querySelector('.buttons .restart')
+const quit_quiz=result_box.querySelector('.buttons .quit')
+
+result_quiz.onclick=()=>
+{
+    result_box.classList.remove("activeResult")
+    quiz_box.classList.add("activeQuiz")
+    
+    let que_count=0;
+let que_numb=1;
+let timeValue=15
+let userScore=0
+showQuestions(que_count)
+    queCounter(que_numb)
+    clearInterval(counter)
+    startTimer(timeValue)
+    next_btn.style.display='none'
 }
 
-// Variables para la cuenta regresiva
-function iniciarCuentaRegresiva() {
-    // Ocultar la pantalla de Descripción
-    document.getElementById("descripcion").style.display = 'none';
+quit_quiz.onclick=()=>
+{
+    window.location.reload()
+}
 
-    // Mostrar la pantalla de Countdown
-    const countdownElement = document.getElementById("countdown");
-    countdownElement.style.display = 'block';
+//Next button click
+next_btn.onclick=()=>{
+    if(que_count<questions.length-1){
+        que_count++
+        que_numb++
+    showQuestions(que_count)
+    queCounter(que_numb)
+    clearInterval(counter)
+    startTimer(timeValue)
+    next_btn.style.display='none'
+    }else{
+        console.log("que completed")
+        showResultBox()
+    }
+}
 
-    // Iniciar la cuenta regresiva
-    let countdownValue = 3; // Valor inicial de la cuenta regresiva
-    countdownElement.textContent = countdownValue;
+//geting questions and options from array
+function showQuestions(index){
+    const que_text=document.querySelector(".que_text")
+    let que_tag=`<span>${questions[index].numb} . ${questions[index].question}</span>`;
+    let option_tag=`<div class="option"><span>${questions[index].options[0]}</span></div>`+
+    `<div class="option"><span>${questions[index].options[1]}</span></div>`+
+    `<div class="option"><span>${questions[index].options[2]}</span></div>`+
+    `<div class="option"><span>${questions[index].options[3]}</span></div>`;
+que_text.innerHTML=que_tag;
+option_list.innerHTML=option_tag;
 
-    const countdownInterval = setInterval(function() {
-        countdownValue--;
+const option=option_list.querySelectorAll('.option')
+for (let i = 0; i < option.length; i++) {
+    option[i].setAttribute("onclick", "optionSelected(this)");
+    
+}
+}
 
-        if (countdownValue === 0) {
-            // Cuando la cuenta regresiva llega a cero, detenemos el intervalo
-            clearInterval(countdownInterval);
+let tickIcon=`<div class="icon tick"><i class="fa-solid fa-check"></i></div>`
+let crossIcon=`<div class="icon cross"><i class="fa fa-times" ></i></div>`
 
-            // Ocultar la pantalla de Countdown
-            countdownElement.style.display = 'none';
 
-            // Comenzar el juego
-            comenzarGame(subcompetenciaSeleccionada);
-        } else {
-            // Actualizar el texto del contador
-            countdownElement.textContent = countdownValue;
+function optionSelected(answer){
+    clearInterval(counter)
+    let userAns=answer.textContent;
+    let correctAns=questions[que_count].answer;
+    let allOptions=option_list.children.length
+    if(userAns==correctAns){
+        userScore+=1
+        console.log(userScore)
+        answer.classList.add('correct')
+    console.log("correct")
+    answer.insertAdjacentHTML('beforeend',tickIcon)
+    }
+    else{
+        answer.classList.add('incorrect')
+        console.log("wrong")
+        answer.insertAdjacentHTML('beforeend',crossIcon)
+    }
+
+
+    //if answer is incorrect then automatically select correct
+    for (let i = 0; i < allOptions; i++) {
+        if(option_list.children[i].textContent==correctAns){
+            option_list.children[i].setAttribute("class", "option correct");
+
         }
-    }, 1000); // Actualizar cada 1 segundo (1000 milisegundos)
-}
-
-
-
-
-
-function comenzarGame(subcompetencia) {
-    subcompetenciaSeleccionada = subcompetencia;
-    posActual = 0;
-    cantidadAcertadas = 0;
-    document.getElementById("descripcion").style.display = 'none';
-    document.getElementById("pantallaGame").style.display = 'block';
-    cargarPreguntasYOpciones();
-}
-
-function cargarPreguntasYOpciones() {
-    // Aquí debes cargar las preguntas y opciones según la subcompetenciaSeleccionada
-    // Puedes usar un switch o un objeto con las preguntas y opciones por subcompetencia
-    // Por ejemplo:
-    switch (subcompetenciaSeleccionada) {
-        case 'Subcompetencia 1':
-            // Cargar preguntas y opciones para Subcompetencia 1
-            cuestion = ['How do you say?Banana', 'How do you say?Uva'];
-            correcta = [1, 2];
-            opcions = [['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva']];
-            cargarCuestion(); // Para cargar la primera pregunta
-            break;
-        case 'Subcompetencia 2':
-            // Cargar preguntas y opciones para Subcompetencia 2
-            cuestion = ['How do you say?Uva', 'How do you say?Naranja'];
-            correcta = [2, 0];
-            opcions = [['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva']];
-            cargarCuestion(); // Para cargar la primera pregunta
-            break;
-        case 'Subcompetencia 3':
-            // Cargar preguntas y opciones para Subcompetencia 3
-            cuestion = ['How do you say?Naranja', 'How do you say?Banana'];
-            correcta = [0, 1];
-            opcions = [['Naranja', 'Banana', 'Uva'], ['Naranja', 'Banana', 'Uva']];
-            cargarCuestion(); // Para cargar la primera pregunta
-            break;
-        // Agrega más casos para otras subcompetencias
+        
     }
+
+
+    //once user selected disabled all option
+    for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add('disabled')
+        
+    }
+    next_btn.style.display='block'
 }
 
-function cargarCuestion() {
-    if (cuestion.length <= posActual) {
-        terminarGame();
-    } else {
-        limpiarOpcions();
-        document.getElementById("textoPantallaGame").innerHTML = cuestion[posActual];
+function showResultBox(){
+    info_box.classList.remove("activeInfo") //hide info box
+    quiz_box.classList.remove("activeQuiz") //hide the quiz box
+    result_box.classList.add("activeResult") //show the result box
+const scoreText=result_box.querySelector(".score_text")
+if(userScore>3){
+    let scoreTag=`<span>congrats!,you got <p>${userScore}</p> out of <p>${questions.length}</p></span>`
+scoreText.innerHTML=scoreTag
+}
+else if(userScore>1){
+    let scoreTag=`<span>nice,you got <p>${userScore}</p> out of <p>${questions.length}</p></span>`
+scoreText.innerHTML=scoreTag
+}else {
+    let scoreTag=`<span>Sorry,you got <p>${userScore}</p> out of <p>${questions.length}</p></span>`
+scoreText.innerHTML=scoreTag
+}
+}
 
-        for (let i = 0; i < opcions[posActual].length; i++) {
-            document.getElementById("n" + i).innerHTML = opcions[posActual][i];
+
+
+
+function startTimer(time){
+    counter=setInterval(timer,1000);
+    function timer(){
+timeCount.textContent=time
+time--
+if(time<9){
+    let addZero=timeCount.textContent
+    timeCount.textContent="0"+addZero
+}
+if(time<0){
+    clearInterval(counter)
+    timeCount.textContent="00"
+
+    let correctAns=questions[que_count].answer;
+    let allOptions=option_list.children.length
+
+    for (let i = 0; i < allOptions; i++) {
+        if(option_list.children[i].textContent==correctAns){
+            option_list.children[i].setAttribute("class", "option correct");
+
         }
+        
+    }
+
+
+    
+    for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add('disabled')
+        
+    }
+    next_btn.style.display='block'
+}
     }
 }
 
-function limpiarOpcions() {
-    for (let i = 0; i < 3; i++) {
-        document.getElementById("n" + i).className = "nombre";
-        document.getElementById("l" + i).className = "letra";
-    }
-}
 
-function comprobarRespuesta(opElegida) {
-    if (opElegida == correcta[posActual]) {
-        document.getElementById("n" + opElegida).className = "nombre nombreAcertada";
-        document.getElementById("l" + opElegida).className = "letra letraAcertada";
-        cantidadAcertadas++;
-    } else {
-        document.getElementById("n" + opElegida).className = "nombre nombreNoAcertada";
-        document.getElementById("l" + opElegida).className = "letra letraNoAcertada";
 
-        document.getElementById("n" + correcta[posActual]).className = "nombre nombreAcertada";
-        document.getElementById("l" + correcta[posActual]).className = "letra letraAcertada";
-    }
-    posActual++;
-    setTimeout(cargarCuestion, 1000);
-}
+function queCounter(index){
+    
+const bottom_ques_counter= quiz_box.querySelector(".total_que")
+let totalQuesCounting=`<span><p>${index}</p> of <p>${questions.length}</p> questions</span>`
 
-function terminarGame() {
-    document.getElementById("pantallaGame").style.display = "none";
-    document.getElementById("pantallaEnd").style.display = "block";
-    document.getElementById("numCorrectas").innerHTML = cantidadAcertadas;
-    document.getElementById("numIncorrectas").innerHTML = cuestion.length - cantidadAcertadas;
-}
-
-function volverInicio() {
-    document.getElementById("pantallaEnd").style.display = "none";
-    document.getElementById("subcompetencias").style.display = "block";
-    document.getElementById("pantallaGame").style.display = "none";
+bottom_ques_counter.innerHTML=totalQuesCounting
 }

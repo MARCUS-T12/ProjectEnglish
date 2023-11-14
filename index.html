@@ -2,74 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>QUIZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to quizz</h1>
-
-    <div id="pantallaInitial">
-        <p>You will learn how to play this game in relation to the topics you have seen</p>
-        <button class="btn" onclick="mostrarSubcompetencias()">Start</button>
-    </div>
+    <!--Start quiz button-->
+    <div class="start_btn"><button>Brain Quiz</button></div>
     
-    <div id="subcompetencias">
-        <div  id="iconSet" onclick="pantallaInitial()">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMJJREFUSEvdldENwjAMRF83gU1gFCYBJgE2YRO6CehQUpUg69oo7UctVflIfc92ErtjYesW1md1wAE4A1pr7AlcAa1fKzN4Absa5ZGPxI8R4B2ApzL//MsMtg+4APoisyVytZZAnw5Ra2lNABKNIBaQf3CZZMijKFlTgCAn4D6KxgJc5FlAJZL48GKTYxPAz0stIrIA99BuKfLqa+oAU0s4dIjttYoW7Vo3bB+1aw0aHWTtTLADxx3i7P3VZ/LsCJ3DB77FMhmchYmbAAAAAElFTkSuQmCC"/>
+    <!--Info Box-->
+    <div class="info_box">
+        <div class="info_title"><span>
+            Quiz Rules
+        </span></div>
+        <div class="info_list">
+            <div class="info">1.You will have only <span>15 seconds </span>Per question</div>
+            <div class="info">2.once you select your answer ,you can't reselect</div>
+            <div class="info">3.you can not select any option once time goes off</div>
+            <div class="info">4.you can not exit the quiz while you are playing</div>
+            <div class="info">5.you will get points on the basis of your answer</div>
+            
         </div>
-        <h2>Subcompetencias:</h2>
-        <ul>
-            <li><button class="btn" id="btnSubcompetencia1" data-subcompetencia="Subcompetencia 1" onclick="mostrarDescripcion('Subcompetencia 1')"><strong>Tema 1:</strong> Descripción de la subcompetencia 1.</button></li>
-            <li><button class="btn" id="btnSubcompetencia2" data-subcompetencia="Subcompetencia 2" onclick="mostrarDescripcion('Subcompetencia 2')"><strong>Tema 2:</strong> Descripción de la subcompetencia 2.</button></li>
-            <li><button class="btn" id="btnSubcompetencia3" data-subcompetencia="Subcompetencia 3" onclick="mostrarDescripcion('Subcompetencia 3')"><strong>Tema 3:</strong> Descripción de la subcompetencia 3.</button></li>
-            <!-- Agrega más temas y subcompetencias según sea necesario -->
-        </ul>
-    </div>
-    
-    
-    <div id="descripcion">
-        <h2>Descripción de la Subcompetencia</h2>
-        <p id="descripcionTexto"></p>
-        <div id="contenedorBtn">
-            <button class="btn" onclick="regresarASubcompetencias()">Back</button>
-            <button class="btn" onclick="iniciarCuentaRegresiva()">Play</button>
+        <div class="buttons">
+            <button class="quit"> Exit</button>
+            <button class="restart"> continue</button>
         </div>
     </div>
 
-    <div id="countdown">
-        <h2>¡La cuenta regresiva ha comenzado!</h2>
-        <p id="countdownText">3</p>
-    </div>
-    
-    
-    <div class="pantallaGame" id="pantallaGame">
-        <div id="textoPantallaGame"></div>
-        <div class="opcions">
-            <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
-                <div class="letra" id="l0">A</div>
-                <div class="nombre" id="n0">OPTION A</div>
+    <!--quiz box-->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Quiz Application</div>
+            <div class="timer">
+                <div class="time_text">time left</div>
+                <div class="timer_sec">15</div>
             </div>
-            <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
-                <div class="letra" id="l1">B</div>
-                <div class="nombre" id="n1">OPTION B</div>
-            </div>
-            <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
-                <div class="letra" id="l2">C</div>
-                <div class="nombre" id="n2">OPTION C</div>
-            </div>
+            
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- <span>
+                what does html stands for?
+            </span> -->
         </div>
+            <div class="option_list">
+                <!-- <div class="option">
+                    <span>
+                    Hypertext Makeup Language.
+                    </span>
+                    <div class="icon tick">
+                        <i class="fa-solid fa-check"></i>
+                </div>
+                </div>
+                <div class="option">
+                    <span>
+                        Hypertext Markup Language.
+                </span>
+                <div class="icon cross"><i class="fa fa-times" ></i>
+                </div>
+                </div>
+                <div class="option">
+                    <span>
+                        Hyper Markup Language.
+                </span>
+                
+                </div>
+                <div class="option">
+                    <span>
+                        Hypertext Maekup Language.
+                </span>
+                
+                </div> -->
+            </div>
+        </section>
+        <!--Quiz box footer-->
+        <footer>
+            <div class="total_que">
+                <!-- <span>
+                    <p>2</p>
+                    of
+                    <p>5</p> questions
+                </span> -->
+            </div>
+            <div class="next_btn">Next</div>
+        </footer>
+        <!--Quiz box footer End-->
     </div>
+    <!--quiz box end-->
 
-    <div id="pantallaEnd">
-        <h2>CORRECTAS:<span id="numCorrectas">3</span></h2>
-        <h2>INCORRECTAS:<span id="numIncorrectas">2</span></h2>
-        <button class="btn" onclick="volverInicio()"> volver</button>
-    </div>  
-    
-    
-    <footer>Developed For OurClub</footer>
+<!-- result box -->
+<div class="result_box">
+    <div class="icon"><i class="fa-solid fa-crown"></i></div>
+    <div class="complete_text"> You have completed the quiz!</div>
+    <div class="score_text">
+        <!-- <span>you got <p>2</p> out of <p>5</p></span> -->
+    </div>
+    <div class="buttons">
+        <button class="restart">Replay</button>
+        <button class="quit">quit</button></div>
+</div>
+<!-- result box End-->
 
-    <script src="script.js"></script>
+<script src="question.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
