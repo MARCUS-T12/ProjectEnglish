@@ -18,7 +18,7 @@
             Quiz Rules
         </span></div>
         <div class="info_list">
-            <div class="info">1.You will have only <span>15 seconds </span>Per question</div>
+            <div class="info">1.You will have only <span>10 seconds </span>Per question</div>
             <div class="info">2.Once you select your answer ,you can't reselect</div>
             <div class="info">3.You can not select any option once time goes off</div>
             <div class="info">4.You can not exit the quiz while you are playing</div>
@@ -33,11 +33,11 @@
 
     <!-- Topics Box -->
     <div class="topics_box">
-        <div class="topics_title"><span>Temas</span></div>
+        <div class="topics_title"><span>SUBTEMAS</span></div>
         <div class="topics_list">
-            <div class="sub">Subtema 1</div>
-            <div class="sub">Subtema 2</div>
-            <div class="sub">Subtema 3</div>
+            <div class="sub"><button class="buttons" onclick="sub('Subtema1')">Subtema1</button></div>
+            <div class="sub"><button class="buttons" onclick="sub('Subtema2')">Subtema2</button></div>
+            <div class="sub"><button class="buttons" onclick="sub('Subtema3')">Subtema3</button></div>
             <!-- Add more subtopics as needed -->
         </div>
         <div class="buttons">
@@ -46,8 +46,12 @@
         </div>
     </div>
 
-    <div class="loading-screen">
-        <div id="countdown" class="color-change">3</div>
+    <div class="description_box">
+        <div class="description_title"><span>Description</span></div>
+        <!-- Aquí puedes agregar la descripción y botones adicionales -->
+        <p id="descripcion_text">Descripción del subtema.</p>
+        <button class="back">Back</button>
+        <button class="next">Next</button>
     </div>
 
     <!--quiz box-->
