@@ -36,14 +36,14 @@ next_btn_topics.onclick=()=>{
     quiz_box.classList.add("activeQuiz") //Show the quiz box
 showQuestions(0)
 queCounter(1)
-startTimer(15)
+startTimer(10)
 
 }
 
 let que_count=0;
 let que_numb=1;
 let counter
-let timeValue=15
+let timeValue=10
 let userScore=0
 
 const next_btn=quiz_box.querySelector(".next_btn")
@@ -91,7 +91,7 @@ result_quiz.onclick=()=>
     
     let que_count=0;
 let que_numb=1;
-let timeValue=15
+let timeValue=10
 let userScore=0
 showQuestions(que_count)
     queCounter(que_numb)
