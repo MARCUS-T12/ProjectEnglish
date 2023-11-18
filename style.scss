@@ -184,6 +184,27 @@ body {
 		width: 100%;
 		border-bottom: 1px solid lightgrey;
 	}
+	.buttons {
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0 35px;
+		border-top: 1px solid lightgrey;
+		button {
+			margin: 0 5px;
+			height: 40px;
+			width: 100px;
+			border: 1px solid rgb(56, 197, 207);
+			border-radius: 5px;
+			color: $color_3;
+			font-size: 16px;
+			text-align: center;
+			font-weight: 500;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+	}
 }
 .quiz_box {
 	position: absolute;

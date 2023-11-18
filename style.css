@@ -18,7 +18,7 @@ body{
     background: rgb(0, 0, 0);
  
 }
-.start_btn,.info_box,.topics_box, .quiz_box,.result_box{
+.start_btn,.info_box,.topics_box,.description_box, .quiz_box,.result_box{
 position: absolute;
 top:50%;
 left:50%;
@@ -27,7 +27,7 @@ box-shadow: 0px 4px 8px 0 rgba(0, 0,0, 0.2),
 0px 6px 20px 0 rgba(0, 0,0, 0.19);
 transition: all 0.3s ease;
 }
-.info_box.activeInfo,.topics_box.activesub,.quiz_box.activeQuiz
+.info_box.activeInfo,.topics_box.activesub,.description_box.activeDescription ,.quiz_box.activeQuiz
 ,.result_box.activeResult{
 z-index: 5;
     opacity: 1;
@@ -170,7 +170,48 @@ z-index: 5;
     pointer-events: none;
     transform: translate(-50%, -50%), scale(.9);
   } 
+
+  .description_box .description_title {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+  }
   
+  .description_box .buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid lightgrey;
+  }
+
+  .description_box.activeDescription {
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%), scale(1);
+}
+.description_box button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid rgb(122, 56, 207);
+    border-radius: 5px; 
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
 .info_box .buttons{
     height: 60px;
     display: flex;

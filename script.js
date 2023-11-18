@@ -245,3 +245,55 @@ let totalQuesCounting=`<span><p>${index}</p> of <p>${questions.length}</p> quest
 
 bottom_ques_counter.innerHTML=totalQuesCounting
 }
+
+
+const descriptionBox = document.querySelector(".description_box");
+const topicsBox = document.querySelector(".topics_box");
+
+const topicDescriptions = {
+    subtema1: "Descripción de Information Questions.",
+    subtema2: "Descripción de Indirect questions.",
+    subtema3: "Descripción de Vocabulary (Animals).",
+    subtema4: "Descripción de Simple Present and Present Continuous.",
+    subtema5: "Descripción de Present Perfect with ever, never, for, and since.",
+    subtema6: "Descripción de Present Perfect with already and yet."
+};
+
+document.getElementById("subtema1").addEventListener("click", function () {
+    updateDescription("subtema1");
+});
+
+document.getElementById("subtema2").addEventListener("click", function () {
+    updateDescription("subtema2");
+});
+
+document.getElementById("subtema3").addEventListener("click", function () {
+    updateDescription("subtema3");
+});
+
+document.getElementById("subtema4").addEventListener("click", function () {
+    updateDescription("subtema4");
+});
+
+document.getElementById("subtema5").addEventListener("click", function () {
+    updateDescription("subtema5");
+});
+
+document.getElementById("subtema6").addEventListener("click", function () {
+    updateDescription("subtema6");
+});
+
+function updateDescription(subtema) {
+    // Verifica si hay una descripción disponible para el subtema
+    if (topicDescriptions[subtema] !== undefined) {
+        // Actualiza la descripción_box con la descripción del subtema
+        descriptionBox.querySelector(".description_title span").textContent = topicDescriptions[subtema];
+        // Muestra la description_box
+        descriptionBox.classList.add("activeDescription");
+
+        // Oculta la topics_box
+        topicsBox.classList.remove("activesub");
+    } else {
+        console.error(`No se encontró una descripción para ${subtema}.`);
+    }
+}
