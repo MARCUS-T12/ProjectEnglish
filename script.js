@@ -297,3 +297,27 @@ function updateDescription(subtema) {
         console.error(`No se encontró una descripción para ${subtema}.`);
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // ... (tu código existente)
+
+    // Agregar eventos de clic para los botones "back" y "next" en description_box
+    const descriptionBox = document.querySelector(".description_box");
+    const backBtnDescription = descriptionBox.querySelector(".buttons .back_d");
+    const nextBtnDescription = descriptionBox.querySelector(".buttons .next_d");
+
+    backBtnDescription.onclick = () => {
+        // Oculta la description_box y muestra la topics_box
+        descriptionBox.classList.remove("activeDescription");
+        topics_box.classList.add("activesub");
+    };
+
+    nextBtnDescription.onclick = () => {
+        // Inicializa el quiz
+        descriptionBox.classList.remove("activeDescription");
+        quiz_box.classList.add("activeQuiz");
+        showQuestions(0);
+        queCounter(1);
+        startTimer(10);
+    };
+});

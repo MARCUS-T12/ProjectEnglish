@@ -210,6 +210,24 @@ z-index: 5;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.buttons button.next_d{
+    color:#fff ;
+    background: rgb(122, 56, 207);
+}
+.buttons button.next_d:hover{
+    
+    background:rgb(0, 0, 0) ;
+}
+
+
+.buttons button.back_d{
+    color:rgb(124, 56, 207) ;
+}
+
+.buttons button.back+d:hover{
+    
+    background:rgb(0, 0, 0) ;
+    }
 
 
 .info_box .buttons{
