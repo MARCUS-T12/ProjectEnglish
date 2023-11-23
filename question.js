@@ -1,6 +1,7 @@
 //creating an array and passing the number
 
 let questions=[
+    //Information questions
     {
         numb:1,
         question:"_________ do you usually meet your friends? At night or on the weekends?",
@@ -67,6 +68,8 @@ let questions=[
             "When"
         ]
     },
+        //Indirect questions
+
     {
         numb:7,
         question:"Where were you raised --> Can you tell me _______________?",
@@ -122,63 +125,78 @@ let questions=[
             "If you brothers and sisters were born in this city"
         ]
     },
+        //Simple Past
+
     {
         numb:12,
-        question:"A ____ says meow.",
-        answer:"Cat",
+        question:"She______her new coffee cup on the floor",
+        answer:"Dropped",
         options:[
-            "Dog",
-            "Cat",
-            "Elephant",
-            "Monkey"
+            "Dropped",
+            "Returned",
+            "Made",
+            "Discorverd"
         ]
     },
     {
         numb:13,
-        question:"I want to see the ____________ at the zoo.",
-        answer:"Elephant",
+        question:"Didn't you_____Mariana´s books to her?",
+        answer:"Tell",
         options:[
-            "Dog",
-            "Cat",
-            "Elephant",
-            "Mouse"
+            "Returned",
+            "Made",
+            "Tell",
+            "Dropped"
         ]
     },
     {
         numb:14,
-        question:"The ____________ is the king of the jungle.",
-        answer:"Lion",
+        question:"I________my favorite jacket in the back of my closet.",
+        answer:"Returned",
         options:[
-            "Monkey",
-            "Lion",
-            "Elephant",
-            "Mouse"
+            "Made",
+            "Dropped",
+            "Told",
+            "Returned"
         ]
     },
     {
         numb:15,
-        question:"Birds have ____________ and they can fly.",
-        answer:"Wings",
+        question:"He_______a wonderful dinner for us when he got home.",
+        answer:"Made",
         options:[
-            "Trunk",
-            "Scales",
-            "Hooves",
-            "Wings"
+            "Thought",
+            "Told",
+            "Made",
+            "Discoverd"
         ]
     },
     {
         numb:16,
-        question:"My favorite ____________ is a dog.",
-        answer:"Pet",
+        question:"Did they_______you about their trip to Bolivia?",
+        answer:"Discover",
         options:[
-            "Pet",
-            "Pets",
-            "Feline",
-            "Felines"
+            "Discover",
+            "Tell",
+            "Dropped",
+            "Made"
         ]
     },
     {
         numb:17,
+        question:"I_________him for his email address.",
+        answer:"Didn´t ask",
+        options:[
+            "ask",
+            "Didn´t asked",
+            "Dind´t ask",
+            "Dind´t"
+        ]
+    },
+        //Simple Present and Present Continuous.
+
+    {
+        numb:18,
         question:"She ____________ (watch) TV every evening.",
         answer:"Watches",
         options:[
@@ -189,7 +207,7 @@ let questions=[
         ]
     },
     {
-        numb:18,
+        numb:19,
         question:"They __________ (play) soccer in the park right now.",
         answer:"Playing",
         options:[
@@ -200,7 +218,7 @@ let questions=[
         ]
     },
     {
-        numb:19,
+        numb:20,
         question:"I usually __________ (read) a book before bed.",
         answer:"Read",
         options:[
@@ -211,7 +229,7 @@ let questions=[
         ]
     },
     {
-        numb:20,
+        numb:21,
         question:"He __________ (study) for his exam at the moment.",
         answer:"Stuying",
         options:[
@@ -222,7 +240,7 @@ let questions=[
         ]
     },
     {
-        numb:21,
+        numb:22,
         question:"We ___________ (go) to the beach on weekends.",
         answer:"Go",
         options:[
@@ -232,8 +250,10 @@ let questions=[
             "Went"
         ]
     },
+    //Present Perfect with ever, never, for, and since.
+
     {
-        numb:22,
+        numb:23,
         question:"Have you __________ been to Paris?",
         answer:"Ever",
         options:[
@@ -244,7 +264,7 @@ let questions=[
         ]
     },
     {
-        numb:23,
+        numb:24,
         question:"She has lived in New York __________ 2010.",
         answer:"Since",
         options:[
@@ -256,7 +276,7 @@ let questions=[
     },
 
     {
-        numb:24,
+        numb:25,
         question:"__________ you finished your homework yet",
         answer:"Have",
         options:[
@@ -267,7 +287,7 @@ let questions=[
         ]
     },
     {
-        numb:25,
+        numb:26,
         question:"They have known each other __________ a long time.",
         answer:"For",
         options:[
@@ -278,7 +298,7 @@ let questions=[
         ]
     },
     {
-        numb:26,
+        numb:27,
         question:"I've __________ been to a concert with such an amazing atmosphere.",
         answer:"Never",
         options:[
@@ -288,8 +308,10 @@ let questions=[
             "Have"
         ]
     },
+    //Present Perfect with already and yet.
+
     {
-        numb:27,
+        numb:28,
         question:"Have you seen that movie __________?",
         answer:"Already",
         options:[
@@ -300,7 +322,7 @@ let questions=[
         ]
     },
     {
-        numb:28,
+        numb:29,
         question:"She hasn't finished her book __________.",
         answer:"Yet",
         options:[
@@ -311,7 +333,7 @@ let questions=[
         ]
     },
     {
-        numb:29,
+        numb:30,
         question:"__________ you visited the new art exhibition?",
         answer:"Have",
         options:[
@@ -322,7 +344,7 @@ let questions=[
         ]
     },
     {
-        numb:30,
+        numb:31,
         question:"They've __________ eaten at that restaurant.",
         answer:"Already",
         options:[
@@ -333,7 +355,7 @@ let questions=[
         ]
     },
     {
-        numb:31,
+        numb:32,
         question:"__________ finished your coffee?",
         answer:"Already",
         options:[
