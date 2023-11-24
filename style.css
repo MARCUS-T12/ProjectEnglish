@@ -227,6 +227,22 @@ z-index: 5;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+.descripcion_text p {
+
+    text-align: center;
+}
+
+.descripcion_text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.descripcion_text ul li {
+    margin-bottom: 10px;
+}
+
+
 .buttons button.next_d{
     color:#fff ;
     background: rgb(122, 56, 207);
