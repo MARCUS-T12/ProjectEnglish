@@ -9,7 +9,14 @@ const next_btn_topics=topics_box.querySelector(".buttons .next")
 const quiz_box=document.querySelector(".quiz_box")
 const option_list=document.querySelector(".option_list")
 const timeCount=quiz_box.querySelector('.timer .timer_sec')
-
+const next_btn=quiz_box.querySelector(".next_btn")
+const result_box=document.querySelector('.result_box')
+const result_quiz=result_box.querySelector('.buttons .restart')
+const quit_quiz=result_box.querySelector('.buttons .quit')
+const descriptionBox = document.querySelector(".description_box");
+const topicsBox = document.querySelector(".topics_box");
+const backBtnDescription = descriptionBox.querySelector(".buttons .back_d");
+const nextBtnDescription = descriptionBox.querySelector(".buttons .next_d");
 
 //Start quiz button clicled
 start_btn.onclick=()=>{
@@ -40,16 +47,28 @@ startTimer(10)
 
 }
 
+backBtnDescription.onclick = () => {
+    // Oculta la description_box y muestra la topics_box
+    descriptionBox.classList.remove("activeDescription");
+    topics_box.classList.add("activesub");
+};
+
+nextBtnDescription.onclick = () => {
+    // Inicializa el quiz
+    descriptionBox.classList.remove("activeDescription");
+    quiz_box.classList.add("activeQuiz");
+    showQuestions(0);
+    queCounter(1);
+    startTimer(10);
+};
+
 let que_count=0;
 let que_numb=1;
 let counter
 let timeValue=10
 let userScore=0
 
-const next_btn=quiz_box.querySelector(".next_btn")
-const result_box=document.querySelector('.result_box')
-const result_quiz=result_box.querySelector('.buttons .restart')
-const quit_quiz=result_box.querySelector('.buttons .quit')
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -80,9 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  
-  
-
 
 result_quiz.onclick=()=>
 {
@@ -90,10 +106,10 @@ result_quiz.onclick=()=>
     quiz_box.classList.add("activeQuiz")
     
     let que_count=0;
-let que_numb=1;
-let timeValue=10
-let userScore=0
-showQuestions(que_count)
+    let que_numb=1;
+    let timeValue=10
+    let userScore=0
+    showQuestions(que_count)
     queCounter(que_numb)
     clearInterval(counter)
     startTimer(timeValue)
@@ -247,13 +263,12 @@ bottom_ques_counter.innerHTML=totalQuesCounting
 }
 
 
-const descriptionBox = document.querySelector(".description_box");
-const topicsBox = document.querySelector(".topics_box");
+
 
 const topicDescriptions = {
     subtema1: "Descripción de Information Questions.",
     subtema2: "Descripción de Indirect questions.",
-    subtema3: "Descripción de Vocabulary (Animals).",
+    subtema3: "Descripción de Simple Past.",
     subtema4: "Descripción de Simple Present and Present Continuous.",
     subtema5: "Descripción de Present Perfect with ever, never, for, and since.",
     subtema6: "Descripción de Present Perfect with already and yet."
@@ -297,27 +312,3 @@ function updateDescription(subtema) {
         console.error(`No se encontró una descripción para ${subtema}.`);
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    // ... (tu código existente)
-
-    // Agregar eventos de clic para los botones "back" y "next" en description_box
-    const descriptionBox = document.querySelector(".description_box");
-    const backBtnDescription = descriptionBox.querySelector(".buttons .back_d");
-    const nextBtnDescription = descriptionBox.querySelector(".buttons .next_d");
-
-    backBtnDescription.onclick = () => {
-        // Oculta la description_box y muestra la topics_box
-        descriptionBox.classList.remove("activeDescription");
-        topics_box.classList.add("activesub");
-    };
-
-    nextBtnDescription.onclick = () => {
-        // Inicializa el quiz
-        descriptionBox.classList.remove("activeDescription");
-        quiz_box.classList.add("activeQuiz");
-        showQuestions(0);
-        queCounter(1);
-        startTimer(10);
-    };
-});
