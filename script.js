@@ -100,21 +100,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 
-result_quiz.onclick=()=>
-{
-    result_box.classList.remove("activeResult")
-    quiz_box.classList.add("activeQuiz")
-    
-    let que_count=0;
-    let que_numb=1;
-    let timeValue=10
-    let userScore=0
-    showQuestions(que_count)
-    queCounter(que_numb)
-    clearInterval(counter)
-    startTimer(timeValue)
-    next_btn.style.display='none'
-}
+  result_quiz.onclick = () => {
+    result_box.classList.remove("activeResult");
+    quiz_box.classList.add("activeQuiz");
+
+    // Restablece las variables a sus valores iniciales solo si no estás haciendo clic en "Replay"
+    if (!result_quiz.classList.contains("replay")) {
+        que_count = 0;
+        que_numb = 1;
+        timeValue = 10;
+        userScore = 0;
+
+        showQuestions(que_count);
+        queCounter(que_numb);
+        clearInterval(counter);
+        startTimer(timeValue);
+        next_btn.style.display = 'none';
+    } else {
+        // Elimina la clase "replay" para futuras repeticiones
+        result_quiz.classList.remove("replay");
+    }
+};
+
 
 quit_quiz.onclick=()=>
 {
