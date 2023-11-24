@@ -253,7 +253,7 @@ const topicsBox = document.querySelector(".topics_box");
 const topicDescriptions = {
     subtema1: "Descripción de Information Questions.",
     subtema2: "Descripción de Indirect questions.",
-    subtema3: "Descripción de Vocabulary (Animals).",
+    subtema3: "Descripción de Simple Past.",
     subtema4: "Descripción de Simple Present and Present Continuous.",
     subtema5: "Descripción de Present Perfect with ever, never, for, and since.",
     subtema6: "Descripción de Present Perfect with already and yet."
